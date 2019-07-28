@@ -9,7 +9,7 @@ def index (request):
     return render(request,"index.html")
 
 def administration (request):
-    return render(request,"examples/dashboard.html")
+    return render(request,"examples/administration.html")
 
 def newRecord(request):
     if request.method == 'POST':

@@ -1,36 +1,66 @@
 {% extends 'administration.html' %}
-{% block content %}
-
+{%  block content %}
 	<div align="center">
-		<a href="../createP"><b>+</b></a>
-		<a href="{{object.get_absolute_url}}"><b>buscar</b></a>
+		<a href="#"><b>+</b></a>
 	</div>
 	
-	<table align="center">
-		<tr>
-		<th><strong>Empresa</strong></th>
-		<th><strong>Telefono</strong></th>
-		<th><strong>Direccion </strong></th>
-		<th><strong>Contacto </strong></th>
-		<th><strong>Operaciones</strong></th>
-		</tr>
-		{% for obj in object_list %}
-			<tr>
-				<td>{{obj.name}}</td>
-				<td>{{obj.phone}}</td>
-				<td>{{obj.adress}}</td>
-				<td><a href="{{ obj.contact.get_absolute_url }}">{{obj.contact.name}}</a></td>
-				<td><select onchange="window.location.href=this.value">
-					<option value ="list" selected > * </option>
-					<option value ="{{ obj.get_absolute_url }}"> detalles </option>
-					<option value ="{{ obj.get_absolute_url }}../deleteP"> borrar</option>
-					<option value = "{{ obj.get_absolute_url }}../updateP"> editar </option>
-					<option value ="../listC" > detalles Contacto </option>
-					<option value ="../createC" > añadir Contacto </option>
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Simple Table</h4>
+                  <p class="card-category"> Here is a subtitle for this table</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          CODIGO
+                        </th>
+                        <th>
+                          NOMBRE
+                        </th>
+                        <th>
+                          COSTO
+                        </th>
+                        <th>
+                          ESTADO
+                        </th>
+                        <th>
+                          OPERACIONES
+                        </th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            {{obj.codigo}}
+                          </td>
+                          <td>
+                            {{obj.nombre}}
+                          </td>
+                          <td>
+                            {{obj.costo}}
+                          </td>
+                          <td>
+                            {{obj.estado}}
+                          </td>
+                          <td class="text-primary">
+                            <select onchange="window.location.href=this.value">
+								<option value ="list" selected > * </option>
+								<option value ="{{ obj.get_absolute_url }}"> detalles</option>
+								<option value ="{{ obj.get_absolute_url }}"> borrar</option>
+								<option value = "{{ obj.get_absolute_url }}"> editar </option>
 			    	     </select>
-				</td>
-			</tr>
-		{% endfor %}
-	</table>
-{% endblock %}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endblock %}     
 
