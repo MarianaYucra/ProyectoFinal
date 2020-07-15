@@ -4,7 +4,7 @@ from django.db import models
 
 TIPO_CHOICES = (
     ('contado', 'CONTADO'),
-    ('partes', 'PARTES'),
+    ('credito', 'CREDITO'),
 )
 
 class Venta(models.Model):
@@ -15,4 +15,4 @@ class Venta(models.Model):
     precioU = models.DecimalField(max_digits = 9, decimal_places = 2)
     precioV = models.DecimalField(max_digits = 9, decimal_places = 2)
     pago = models.CharField(max_length = 10, choices = TIPO_CHOICES, default = 'contado')
-    fecha = models.DateField()
+    fecha = models.DateField(blank = True)
