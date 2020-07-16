@@ -1,0 +1,15 @@
+{% extends 'administration.html' %}
+{% block content %}
+		<table>
+		    <tr>
+			<form  method='POST'>{% csrf_token %}
+			      {{ form.as_p }}
+                              <tr>
+                                   <td><input type="submit" value='grabar' /></td>
+                                   <td><p><a href="/administrar">cancelar</a></p></td>
+                    	      </tr>
+			</form>
+		    </tr>
+		</table>
+
+{% endblock %}
