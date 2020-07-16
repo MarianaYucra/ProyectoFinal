@@ -19,3 +19,12 @@ def newClient(request):
             }
 
     return render(request,'insertClient.html', context)
+
+
+def showListClient (request):
+    queryset = Cliente.objects.all()
+    context = {
+            'objectList':queryset,
+            }
+
+    return render(request, 'showListClient.html', context)
