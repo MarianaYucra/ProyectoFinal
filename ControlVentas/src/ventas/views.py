@@ -5,6 +5,9 @@ from .models import Venta
 def index (request):
     return render(request,"index.html")
 
+def administration (request):
+    return render(request,"administration.html")
+
 def newRecord(request):
     if request.method == 'POST':
         codigo = request.POST['codigo']
