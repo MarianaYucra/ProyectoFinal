@@ -2,7 +2,7 @@
 {% block content %}
 
 	<div align="center">
-		<a href="../createC"><b>+</b></a>
+		<a href="../create"><b>+</b></a>
 		<a href="{{object.get_absolute_url}}"><b>buscar</b></a>
 	</div>
 	
@@ -20,10 +20,10 @@
 			<td>{{obj.name}}</td>
 			<td>{{obj.phone}}</td>
 			<td>{{obj.adress}}</td>
-			<td><select>
-				<option selected> * </option>
-				<option><a href="borrar"> borrar</a> </option>
-				<option><a href="editar"> editar</a> </option>
+			<td><select onchange="window.location.href=this.value">
+				<option value ="list" selected > * </option>
+				<option value ="{{ obj.get_absolute_url }}delete"> borrar</option>
+				<option value = "{{ obj.get_absolute_url }}update"> editar </option>
 			    </select>
 			</td>
 		</tr>

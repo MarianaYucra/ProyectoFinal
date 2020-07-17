@@ -1,10 +1,12 @@
 from django.shortcuts import render,redirect
 from .models import Cliente
-from .forms import ClienteForm
+from django.urls import reverse_lazy
 from django.views.generic import (
         ListView,
         DetailView,
         CreateView,
+        DeleteView,
+        UpdateView,
     )
 
 # Create your views here.
@@ -42,6 +44,12 @@ class ClientCreateView(CreateView):
             'phone',
             'adress',
         ]
+    success_url = reverse_lazy('cliente-list')
+
+class ClientDeleteView(DeleteView):
+    model = Cliente
+    template_name = 'deleteClient.html'
+    success_url = reverse_lazy('cliente-list')
 
 class ClientListView(ListView):
     model = Cliente
@@ -50,3 +58,15 @@ class ClientListView(ListView):
 class ShowClient(DetailView):
     model = Cliente
     template_name = 'showClient.html'
+
+class ClientUpdateView(UpdateView):
+    model = Cliente
+    template_name = 'insertClient.html'
+    fields = [
+            'NIT',
+            'name',
+            'phone',
+            'adress',
+        ]
+    success_url = reverse_lazy('cliente-list')
+
