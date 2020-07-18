@@ -1,11 +1,7 @@
 {% extends 'administration.html' %}
 {% block content %}
 
-	<div align="center">
-		<a href="../createC"><b>+</b></a>
-		<a href="{{object.get_absolute_url}}"><b>buscar</b></a>
-	</div>
-	
+	<div align="center"><a href="../añadirC"><b>+</b></a></div>
 	<table align="center">
 		<tr>
 		<th><strong>NIT</strong></th>
@@ -14,12 +10,11 @@
 		<th><strong>Direccion </strong></th>
 		<th><strong>Operaciones</strong></th>
 		</tr>
-		{% for obj in object_list %}
 		<tr>
-			<td>{{obj.NIT}}</td>
-			<td>{{obj.name}}</td>
-			<td>{{obj.phone}}</td>
-			<td>{{obj.adress}}</td>
+			<td>{{object.NIT}}</td>
+			<td>{{object.name}}</td>
+			<td>{{object.phone}}</td>
+			<td>{{object.adress}}</td>
 			<td><select>
 				<option selected> * </option>
 				<option><a href="borrar"> borrar</a> </option>
@@ -27,7 +22,6 @@
 			    </select>
 			</td>
 		</tr>
-		{% endfor %}
 	</table>
 {% endblock %}
 
