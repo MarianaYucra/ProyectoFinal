@@ -22,7 +22,7 @@ class Cliente(models.Model):
     NRC = models.CharField(max_length=100)
     gender = models.CharField(max_length = 10, choices = GENDER_CHOICES, default = 'contado')
     state = models.CharField(max_length = 10, choices = STATE_CHOICES, default = 'contado')
-    date = models.DateTimeField(blank = True)
+    date = models.DateTimeField(auto_now_add=True)
 
     def get_absolute_url(self):
         return reverse('cliente-detail', kwargs= {'pk':self.id})

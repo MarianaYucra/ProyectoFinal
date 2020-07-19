@@ -43,6 +43,10 @@ class ClientCreateView(CreateView):
             'name',
             'phone',
             'adress',
+            'NRC',
+            'gender',
+            'state',
+            'date',
         ]
     success_url = reverse_lazy('cliente-list')
 
@@ -67,6 +71,10 @@ class ClientUpdateView(UpdateView):
             'name',
             'phone',
             'adress',
+            'NRC',
+            'gender',
+            'state',
+            'date',
         ]
     success_url = reverse_lazy('cliente-list')
 

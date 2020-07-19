@@ -1,27 +1,44 @@
 {% extends 'administration.html' %}
 {% block content %}
+	<h1 align="center"><b> DETALLES DE CLIENTE </b></h1>
 
-	<div align="center"><a href="../añadirC"><b>+</b></a></div>
 	<table align="center">
 		<tr>
-		<th><strong>NIT</strong></th>
-		<th><strong>Nombre</strong></th>
-		<th><strong>Telefono</strong></th>
-		<th><strong>Direccion </strong></th>
-		<th><strong>Operaciones</strong></th>
-		</tr>
-		<tr>
-			<td>{{object.NIT}}</td>
+			<td><strong>NOMBRE: </strong></td>
 			<td>{{object.name}}</td>
-			<td>{{object.phone}}</td>
+		</tr><br/>
+		<tr>
+			<td><strong>DIRECCION: </strong></td>
 			<td>{{object.adress}}</td>
-			<td><select>
-				<option selected> * </option>
-				<option><a href="borrar"> borrar</a> </option>
-				<option><a href="editar"> editar</a> </option>
-			    </select>
-			</td>
-		</tr>
+		</tr><br/>
+		<tr>
+			<td><strong>TELEFONO: </strong></td>
+			<td>{{object.phone}}</td>
+		</tr><br/>
+		<tr>
+			<td><strong>NIT: </strong></td>
+			<td>{{object.NIT}}</td>
+		</tr><br/>
+		<tr>
+			<td><strong>NRC: </strong></td>
+			<td>{{object.NRC}}</td>
+		</tr><br/>
+		<tr>
+			<td><strong>GENERO: </strong></td>
+			<td>{{object.gender}}</td>
+		</tr><br/>
+		<tr>
+			<td><strong>ESTADO: </strong></td>
+			<td>{{object.state}}</td>
+		</tr><br/>
+		<tr>
+			<td><strong>FECHA DE REGISTRO: </strong></td>
+			<td>{{object.date}}</td>
+		</tr><br/>
+		<tr>
+			<td><strong>------- </strong></td>
+			<td><a href="/list"> regresar</a> </td>
+		</tr><br/>
 	</table>
 {% endblock %}
 

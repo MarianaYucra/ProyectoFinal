@@ -15,18 +15,22 @@
 		<th><strong>Operaciones</strong></th>
 		</tr>
 		{% for obj in object_list %}
-		<tr>
-			<td>{{obj.NIT}}</td>
-			<td>{{obj.name}}</td>
-			<td>{{obj.phone}}</td>
-			<td>{{obj.adress}}</td>
-			<td><select onchange="window.location.href=this.value">
-				<option value ="list" selected > * </option>
-				<option value ="{{ obj.get_absolute_url }}delete"> borrar</option>
-				<option value = "{{ obj.get_absolute_url }}update"> editar </option>
-			    </select>
-			</td>
-		</tr>
+		     {% if obj.state == "active" %}
+
+			<tr>
+				<td>{{obj.NIT}}</td>
+				<td>{{obj.name}}</td>
+				<td>{{obj.phone}}</td>
+				<td>{{obj.adress}}</td>
+				<td><select onchange="window.location.href=this.value">
+					<option value ="list" selected > * </option>
+					<option value ="{{ obj.get_absolute_url }}"> detalles</option>
+					<option value ="{{ obj.get_absolute_url }}delete"> borrar</option>
+					<option value = "{{ obj.get_absolute_url }}update"> editar </option>
+			    	     </select>
+				</td>
+			</tr>
+		    {% endif %}	
 		{% endfor %}
 	</table>
 {% endblock %}
