@@ -25,8 +25,8 @@
 				<td><select onchange="window.location.href=this.value">
 					<option value ="list" selected > * </option>
 					<option value ="{{ obj.get_absolute_url }}"> detalles</option>
-					<option value ="{{ obj.get_absolute_url }}delete"> borrar</option>
-					<option value = "{{ obj.get_absolute_url }}update"> editar </option>
+					<option value ="{{ obj.get_absolute_url }}../delete"> borrar</option>
+					<option value = "{{ obj.get_absolute_url }}../update"> editar </option>
 			    	     </select>
 				</td>
 			</tr>

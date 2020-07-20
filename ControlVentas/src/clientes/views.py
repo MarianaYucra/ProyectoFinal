@@ -46,7 +46,6 @@ class ClientCreateView(CreateView):
             'NRC',
             'gender',
             'state',
-            'date',
         ]
     success_url = reverse_lazy('cliente-list')
 
@@ -74,7 +73,6 @@ class ClientUpdateView(UpdateView):
             'NRC',
             'gender',
             'state',
-            'date',
         ]
     success_url = reverse_lazy('cliente-list')
 
@@ -96,7 +94,29 @@ class ProveedorCreateView(CreateView):
             'phone',
             'FAX',
             'state',
-            'date',
         ]
     success_url = reverse_lazy('Proveedor-list')
 
+class ProveedorDeleteView(DeleteView):
+    model = Proveedor
+    template_name = 'deleteClient.html'
+    success_url = reverse_lazy('proveedor-list')
+
+
+class ProveedorDetailView(DetailView):
+    model = Proveedor
+    template_name = 'showProveedor.html'
+
+class ProveedorUpdateView(UpdateView):
+    model = Proveedor
+    template_name = 'insertClient.html'
+    fields = [
+            'name',
+            'adress',
+            'contact',
+            'NIT',
+            'phone',
+            'FAX',
+            'state',
+        ]
+    success_url = reverse_lazy('Proveedor-list')

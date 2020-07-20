@@ -56,3 +56,7 @@ class Proveedor(models.Model):
     state = models.CharField(max_length = 10, choices = STATE_CHOICES, default = 'active', verbose_name="Estado")
     date = models.DateTimeField(auto_now=True)
 
+
+    def get_absolute_url(self):
+        return reverse('proveedor-detail', kwargs= {'pk':self.id})
+
