@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 
 
@@ -9,6 +9,9 @@ class Producto(models.Model):
     costo = models.DecimalField(max_digits = 9, decimal_places = 2) 
     categoria = models.CharField(max_length = 10)
     marca = models.CharField(max_length = 10)
+
+    def get_absolute_url(self):
+        return reverse('productos: producto-list', kwargs = {'pk': self.id})
 
 
 class Categoria(models.Model):
