@@ -6,6 +6,8 @@ from .views import (
         ClientCreateView,
         ClientDeleteView,
         ClientUpdateView,
+        ProveedorListView,
+        ProveedorCreateView,
         )
 
 urlpatterns = [
@@ -16,5 +18,7 @@ urlpatterns = [
     path('<int:pk>/delete/',ClientDeleteView.as_view(), name="cliente-delete"),
     path('<int:pk>/',ShowClient.as_view(), name="cliente-detail"),
     path('<int:pk>/update/',ClientUpdateView.as_view(), name="cliente-update"),
+    path('listP/',ProveedorListView.as_view(), name="proveedor-list"),
+    path('createP/',ProveedorCreateView.as_view(), name="proveedor-create"),
 ]
 

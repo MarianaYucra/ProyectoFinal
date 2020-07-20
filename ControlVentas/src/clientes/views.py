@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Cliente
+from .models import Cliente, Contact, Proveedor
 from django.urls import reverse_lazy
 from django.views.generic import (
         ListView,
@@ -77,4 +77,26 @@ class ClientUpdateView(UpdateView):
             'date',
         ]
     success_url = reverse_lazy('cliente-list')
+
+#***************************PROVEEDOR*****************************************
+
+class ProveedorListView(ListView):
+    model = Proveedor
+    template_name = 'showListProveedor.html'
+
+
+class ProveedorCreateView(CreateView):
+    model = Proveedor
+    template_name = 'insertClient.html'
+    fields = [
+            'name',
+            'adress',
+            'contact',
+            'NIT',
+            'phone',
+            'FAX',
+            'state',
+            'date',
+        ]
+    success_url = reverse_lazy('Proveedor-list')
 

@@ -22,7 +22,7 @@ class Cliente(models.Model):
     NRC = models.CharField(max_length=100)
     gender = models.CharField(max_length = 10, choices = GENDER_CHOICES, default = 'contado')
     state = models.CharField(max_length = 10, choices = STATE_CHOICES, default = 'contado')
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
         return reverse('cliente-detail', kwargs= {'pk':self.id})
@@ -39,7 +39,7 @@ class Contact(models.Model):
     phone = models.IntegerField(null=True, verbose_name="Telefono")
     cellPhone = models.IntegerField(verbose_name="Celular")
     degree = models.CharField(max_length = 10, choices = DEGREE_CHOICES, default = 'primary', verbose_name="Nivel Contacto")
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(auto_now=True)
 
 STATE_CHOICES = (
     ('active', 'ACTIVO'),
@@ -54,5 +54,5 @@ class Proveedor(models.Model):
     phone = models.IntegerField(verbose_name="Telefono Empresa")
     FAX = models.CharField(max_length=50)
     state = models.CharField(max_length = 10, choices = STATE_CHOICES, default = 'active', verbose_name="Estado")
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(auto_now=True)
 
