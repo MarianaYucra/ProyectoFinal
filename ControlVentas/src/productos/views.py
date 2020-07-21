@@ -6,6 +6,8 @@ from .models import Producto
 from .models import Categoria
 from django.views.generic import (ListView, DetailView, DeleteView, UpdateView, CreateView,)
 
+from django.urls import reverse_lazy
+
 class ProductoUpdateView(UpdateView):
     model = Producto
     fields = [
@@ -17,7 +19,7 @@ class ProductoUpdateView(UpdateView):
     ]
 class ProductoDeleteView(DeleteView):
     model = Producto
-    #success_url = reverse_lazy('productos:producto-list')
+    success_url = reverse_lazy('productos:producto-list')
 
 class ProductoListView(ListView):
     model = Producto
@@ -42,7 +44,7 @@ class CategoriaUpdateView(UpdateView):
     ]
 class CategoriaDeleteView(DeleteView):
     model = Categoria
-    #success_url = reverse_lazy('productos:producto-list')
+    success_url = reverse_lazy('productos:producto-list')
 
 class CategoriaListView(ListView):
     model = Categoria
