@@ -4,15 +4,26 @@ from django.shortcuts import render
 
 from .models import Producto
 from .models import Categoria
-from django.views.generic import (ListView, CreateView,)
+from django.views.generic import (ListView, DetailView, DeleteView, UpdateView, CreateView,)
 
-
+class ProductoUpdateView(UpdateView):
+    model = Producto
+    fields = [
+            'nombre',
+            'codigo',
+            'costo',
+            'categoria',
+            'marca',
+    ]
+class ProductoDeleteView(DeleteView):
+    model = Producto
+    #success_url = reverse_lazy('productos:producto-list')
 
 class ProductoListView(ListView):
     model = Producto
 
-#class ProductoDetailView(DetailView):
-    #model = Producto
+class ProductoDetailView(DetailView):
+    model = Producto
 
 class ProductoCreateView(CreateView):
     model = Producto
@@ -21,8 +32,29 @@ class ProductoCreateView(CreateView):
             'codigo',
             'costo',
             'categoria',
-            'marca',
-            
+            'marca',          
+    ]
+class CategoriaUpdateView(UpdateView):
+    model = Categoria
+    fields = [
+            'nombre',
+            'activado',
+    ]
+class CategoriaDeleteView(DeleteView):
+    model = Categoria
+    #success_url = reverse_lazy('productos:producto-list')
+
+class CategoriaListView(ListView):
+    model = Categoria
+
+class CategoriaDetailView(DetailView):
+    model = Categoria
+
+class CategoriaCreateView(CreateView):
+    model = Categoria
+    fields = [
+            'nombre',
+            'activado',
     ]
 
 #def indexProducto(request):

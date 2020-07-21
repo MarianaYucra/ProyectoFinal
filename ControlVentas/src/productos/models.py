@@ -11,10 +11,13 @@ class Producto(models.Model):
     marca = models.CharField(max_length = 10)
 
     def get_absolute_url(self):
-        return reverse('productos: producto-list', kwargs = {'pk': self.id})
+        return reverse('productos:producto-detail', kwargs = {'pk': self.id})
 
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length = 10)
     activado = models.BooleanField(default = True)
+
+    def get_absolute_url(self):
+        return reverse('productos:categoria-detail', kwargs = {'pk': self.id})
 

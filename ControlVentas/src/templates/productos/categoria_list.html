@@ -1,0 +1,14 @@
+<html>
+<head>
+</head>
+<body>
+        <h1>Lista de personas</h1>
+        {% for instance in object_list %}
+        <p>
+                {{ instance.id}}
+                <a href = '{{ instance.get_absolute_url }}'>{{ instance.nombre }}</a>
+        </p>
+        {% endfor %}
+</body>
+</html>
+
