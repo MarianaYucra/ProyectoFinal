@@ -11,6 +11,8 @@ from .views import (
         ProveedorDeleteView,
         ProveedorDetailView,
         ProveedorUpdateView,
+        ContactListView,
+        ContactCreateView,
         )
 
 urlpatterns = [
@@ -26,5 +28,7 @@ urlpatterns = [
     path('<int:pk>/deleteP/',ProveedorDeleteView.as_view(), name="proveedor-delete"),
     path('<int:pk>/detailP/',ProveedorDetailView.as_view(), name="proveedor-detail"),
     path('<int:pk>/updateP/',ProveedorUpdateView.as_view(), name="proveedor-update"),
+    path('listC/',ContactListView.as_view(), name="contacto-list"),
+    path('createC/',ContactCreateView.as_view(), name="contacto-create"),
 ]
 

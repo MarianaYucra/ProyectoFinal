@@ -120,3 +120,23 @@ class ProveedorUpdateView(UpdateView):
             'state',
         ]
     success_url = reverse_lazy('Proveedor-list')
+
+#***************************Contact*****************************************
+
+class ContactListView(ListView):
+    model = Proveedor
+    template_name = 'showListContact.html'
+
+
+class ContactCreateView(CreateView):
+    model = Contact
+    template_name = 'insertClient.html'
+    fields = [
+            'name',
+            'email',
+            'phone',
+            'cellPhone',
+            'degree',
+        ]
+    success_url = reverse_lazy('Proveedor-list')
+
