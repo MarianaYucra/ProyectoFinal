@@ -8,7 +8,6 @@ from django.views.generic import (ListView, UpdateView, DetailView,)
 def index (request):
     return render(request,"index.html")
 
-<<<<<<< HEAD
 def administration (request):
     return render(request,"administration.html")
 
@@ -30,7 +29,6 @@ def newRecord(request):
     else:
         return render(request,'newRecord.html')
 
-=======
 
 class VentaListView(ListView):
     model = Venta
@@ -58,4 +56,4 @@ class VentaDetailView(DetailView):
 #        'objeto' : obj,
 #    }
 #    return render(request, "listar.html", context)
->>>>>>> d36dfedb4a121a7bde8cf1726ec84cae214f0a78
+
