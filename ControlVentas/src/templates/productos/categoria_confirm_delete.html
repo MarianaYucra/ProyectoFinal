@@ -1,0 +1,7 @@
+<table>
+		<tr><p> Estas seguro de querer borrar la categoría:<b> {{ object.nombre }} </b></p></tr><br />
+		<tr><form action="" method='POST'>{% csrf_token %}
+				<td><input type="submit" value='SI' /></td>
+			<td><a href="/productos/categoria">Cancelar</a></td>
+		</form></tr><br />
+	</table>
