@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="es" >
+    <head>
+        <title>Sitio administrativo </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/miEstilo1.css' %}">
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css">
+
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+    
+
+        <meta name="robots" content="NONE,NOARCHIVE">
+    </head>
+
+
+    <body class=" dashboard"
+        data-admin-utc-offset="-18000">
+
+        <!-- Container -->
+        <div id="container">
+
+    
+            <!-- Header -->
+            <div id="header">
+                <div id="branding">
+        
+                    <h1 id="site-name"><a href="">Administración</a></h1>
+
+                </div>
+        
+                <div id="user-tools">
+            
+                    Bienvenido/a,
+                    <strong>{{user.first_name}}</strong>.
+                
+                    <a href="">Almacen: Principal</a> /
+                
+                    <a href="">Fecha de Acceso: <b id="demo"></b></a> /
+                
+                    <a href="">Terminar sesión</a>
+            
+                </div>
+        
+        
+        
+            </div>
+            <!-- END Header -->
+    
+    
+
+    
+        
+    
+
+            <!-- Content -->
+            <div id="content" class="colMS">
+        
+        
+            <div id="content-main">
+
+                <div class="app-auth module">
+                    <table>
+                        <caption>
+                            <a href="/admin/auth/" class="section" title="Modelos en la aplicación Autenticación y autorización">Autenticación y autorización</a>
+                        </caption>
+        
+                        <tr class="model-group">
+            
+                            <th scope="row"><a href="/admin/auth/group/">Grupos</a></th>
+            
+
+            
+                            <td><a href="/admin/auth/group/add/" class="addlink">Añadir</a></td>
+            
+
+            
+                
+                            <td><a href="/admin/auth/group/" class="changelink">Modificar</a></td>
+                
+            
+                        </tr>
+        
+                    </table>
+                </div>
+
+            </div>
+
+        
+<div id="content-related">
+    <div class="module" id="recent-actions-module">
+            
+            <ul class="actionlist">
+            <li class="changelink">
+                
+                    <a href="">Home</a>
+                
+            </li>
+            <li class="changelink">
+                
+                    <a href="">Principal</a>
+                
+            </li>
+            
+            <li class="changelink">
+                
+                    <a href="">Articulos</a>
+                
+            </li>
+            
+            <li class="addlink">
+                
+                    <a href="">Ventas</a>
+                
+            </li>
+            
+            <li class="addlink">
+                
+                    <a href="">Clientes</a>
+                
+            </li>
+            <li class="addlink">
+                
+                    <a href="">Proveedores</a>
+                
+            </li>
+            
+            </ul>
+            
+    </div>
+</div>
+
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+</div>
+<!-- END Container -->
+<script>
+                    var f = new Date();
+                    var date = f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+                    document.getElementById('demo').innerHTML= date;
+</script>
+</body>
+</html>
+

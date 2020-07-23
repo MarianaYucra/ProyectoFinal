@@ -67,9 +67,16 @@
     	<!-- Content -->
     	<div class="article">
 		{% block content %}
-          	    <h1><b>Sitio administrativo:</b></h1>
+		<div align="center" id ="columna1">
+			<h1><b>SITIO ADMINISTRATIVO:</b></h1>
+		</div>
         
-	 	    <div id="content-main">holaaaaaaaa</div>
+		<div align="center" id="columna2"> 
+
+			<img width="150px" height="50px" src="static/images/administrador.png" alt="">
+			<h2>Bienvenido {{request.user}}</h2>
+
+		</div>
 		{% endblock %}
 
       </div>

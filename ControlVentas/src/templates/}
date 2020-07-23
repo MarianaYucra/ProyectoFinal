@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="es" >
+	<head>
+		<title>Administracion de Ventas</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/miEstilo.css' %}">
+		<!--<link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css">-->
+    		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    		<link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+		<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+<body class=" dashboard"
+  	data-admin-utc-offset="-18000">
+    	<!-- Header -->
+    	<div id="header">
+        	<div id="branding">
+				    <h1 id="site-name">ADMINISTRADOR</h1>
+        	</div>
+        
+        	<div id="user-tools">
+            <p>Bienvenido/a,
+				        <strong>{{ user.first_name }} </strong>.
+            </p>
+            <p> Almacen: Principal</p>
+				    <p>Fecha de Acceso: <b id="demo"></b></p>
+	    
+				    <p> <img src=""/> </p>
+        	</div>
+    	</div>
+    	<!-- END Header -->
+      <div class="container">
+        <div class="colums">
+           
+
+      	  <!-- Content -->
+      	 <div class="col1">
+  		  {% block content %}
+            	    <h1><b>Sitio administrativo:</b></h1>
+          
+  	 	    <div id="content-main">holaaaaaaaa</div>
+  		  {% endblock %}
+
+        </div>
+
+        <!-- END Content -->
+         <!--  Aside -->
+          <div class="col2">
+            <div class="module" id="recent-actions-module">
+              <table>
+                    <tr class="model-venta">
+                        <th scope="row"><a href="/administrar" class="section" title="Modelos en la aplicación Ventas">Principal</a></th>
+                    </tr>
+          
+                    <tr class="model-venta">
+              
+                        <th scope="row"><a href="">Articulos</a></th>
+
+                    </tr>
+                    <tr class="model-venta">
+                    
+                        <th scope="row"><a href="../añadir">Ventas</a></th>
+
+                    </tr>
+                    <tr class="model-venta">
+                    
+                        <th scope="row"><a href="../list">Clientes</a></th>
+
+                    </tr>
+                    <tr class="model-venta">
+                    
+                        <th scope="row"><a href="">Proveedores</a></th>
+          
+              </table>
+            </div>
+          </div>
+          <!-- END Aside -->
+    </div>
+  </div>
+    <script>
+                    var f = new Date();
+                    var date = f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+                    document.getElementById('demo').innerHTML= date;
+    </script>
+</body>
+</html>

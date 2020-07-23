@@ -2,29 +2,31 @@
 {% block content %}
 
 	<div align="center">
-		<a href="../create"><b>+</b></a>
+		<a href="../createP"><b>+</b></a>
 		<a href="{{object.get_absolute_url}}"><b>buscar</b></a>
 	</div>
 	
 	<table align="center">
 		<tr>
-		<th><strong>NIT</strong></th>
-		<th><strong>Nombre</strong></th>
+		<th><strong>Empresa</strong></th>
 		<th><strong>Telefono</strong></th>
 		<th><strong>Direccion </strong></th>
+		<th><strong>Contacto </strong></th>
 		<th><strong>Operaciones</strong></th>
 		</tr>
 		{% for obj in object_list %}
 			<tr>
-				<td>{{obj.NIT}}</td>
 				<td>{{obj.name}}</td>
 				<td>{{obj.phone}}</td>
 				<td>{{obj.adress}}</td>
+				<td><a href="{{ obj.contact.get_absolute_url }}">{{obj.contact.name}}</a></td>
 				<td><select onchange="window.location.href=this.value">
 					<option value ="list" selected > * </option>
-					<option value ="{{ obj.get_absolute_url }}"> detalles</option>
-					<option value ="{{ obj.get_absolute_url }}../delete"> borrar</option>
-					<option value = "{{ obj.get_absolute_url }}../update"> editar </option>
+					<option value ="{{ obj.get_absolute_url }}"> detalles </option>
+					<option value ="{{ obj.get_absolute_url }}../deleteP"> borrar</option>
+					<option value = "{{ obj.get_absolute_url }}../updateP"> editar </option>
+					<option value ="../listC" > detalles Contacto </option>
+					<option value ="../createC" > añadir Contacto </option>
 			    	     </select>
 				</td>
 			</tr>
