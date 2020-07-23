@@ -1,10 +1,14 @@
 from django.shortcuts import render,redirect
 from .models import Venta
+from django.views.generic import (ListView, UpdateView, DetailView,)
+
+
 
 # Create your views here.
 def index (request):
     return render(request,"index.html")
 
+<<<<<<< HEAD
 def administration (request):
     return render(request,"administration.html")
 
@@ -26,3 +30,32 @@ def newRecord(request):
     else:
         return render(request,'newRecord.html')
 
+=======
+
+class VentaListView(ListView):
+    model = Venta
+
+    
+class VentaUpdateView(UpdateView):
+    model = Venta
+    fiels = [
+        'codigo',
+        'cliente',
+        'producto',
+        'cantidad',
+        'precioU',
+        'precioV',
+        'pago',
+        'fecha',
+
+    ]
+class VentaDetailView(DetailView):
+    model = Venta
+
+#def listar(request):
+#    obj = Venta.objects.all()
+#    context = {
+#        'objeto' : obj,
+#    }
+#    return render(request, "listar.html", context)
+>>>>>>> d36dfedb4a121a7bde8cf1726ec84cae214f0a78
