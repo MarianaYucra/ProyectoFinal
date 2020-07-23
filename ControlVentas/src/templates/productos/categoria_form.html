@@ -1,12 +1,12 @@
-<html>
-<head>
+<table>
+                    <tr>
+                        <form  method='POST'>{% csrf_token %}
+                              {{ form.as_p }}
+                              <tr>
+                                   <td><input type="submit" value='grabar' /></td>
+                                   <td><p><a href="/productos/categoria">cancelar</a></p></td>
+                              </tr>
+                        </form>
+                    </tr>
+</table>
 
-</head>
-<body>
-	<h1>Registra tu nuevo producto</h1>
-	<form method = 'post'>{% csrf_token %}
-		{{ form.as_p}}
-		<input type = 'submit' value= "Save">
-	</form>
-</body>
-</html>

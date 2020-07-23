@@ -1,14 +1,8 @@
-<html>
-<head>
-</head>
-<body>
-	<h1>Borrando Producto</h1>
-	<h2> {{object.nombre }}</h2>
 
-	<form method = "post">{% csrf_token %}
-		<p>Confirme que desea borrar a esta persona</p>
-		<input type = "submit" value = "Confirmar">
-	</form>
-
-</body>
-</html>
+<table>
+		<tr><p> Estas seguro de querer borrar el producto:<b> {{ object.nombre }} </b></p></tr><br />
+		<tr><form action="" method='POST'>{% csrf_token %}
+				<td><input type="submit" value='SI' /></td>
+			<td><a href="/productos">Cancelar</a></td>
+		</form></tr><br />
+</table>

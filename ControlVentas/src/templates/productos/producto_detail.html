@@ -1,11 +1,19 @@
-<html>
-<head>
-</head>
-<body>
-	<h1>Detalle de Producto</h1>
-	<h2> {{ object.nombre}}</h2>
-	<p>Categoría: {{ object.categoria }}</p>
-	<p>Precio unitario: {{ object.costo }}</p>
-</body>
-</html>
-
+<table align="center">
+	<tr>
+		<th><strong>ID</strong></th>
+		<th><strong>Nombre</strong></th>
+		<th><strong>Estado</strong></th>
+		<th><strong>Operaciones</strong></th>
+	</tr>
+	<tr>
+		<td>{{object.codigo}}</td>
+		<td>{{object.nombre}}</td>
+		<td>{{object.costo}}</td>
+		<td><select>
+				<option selected> * </option>
+				<option><a href="borrar"> borrar</a> </option>
+				<option><a href="editar"> editar</a> </option>
+		    </select>
+		</td>
+	</tr>
+</table>
