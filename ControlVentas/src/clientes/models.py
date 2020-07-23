@@ -19,6 +19,9 @@ DEGREE_CHOICES = (
     ('secondary', 'SEGUNDARIO'),
     ('tertiary', 'TERCIARIO'),
 )
+
+#**************Modelo Cliente*********************************************
+
 class Cliente(models.Model):
     NIT = models.CharField(max_length=50)
     name = models.CharField(max_length=100)
@@ -32,6 +35,7 @@ class Cliente(models.Model):
     def get_absolute_url(self):
         return reverse('cliente-detail', kwargs= {'pk':self.id})
 
+#**************Modelo Contacto*********************************************
 
 class Contact(models.Model):   
     name = models.CharField(max_length=100, verbose_name="Nombre Contacto")
@@ -44,6 +48,7 @@ class Contact(models.Model):
     def get_absolute_url(self):
         return reverse('contacto-detail', kwargs= {'pk':self.id})
 
+#**************Modelo Proveedor*********************************************
 
 class Proveedor(models.Model): 
     name = models.CharField(max_length=100, verbose_name="Nombre Empresa Proveedora")
