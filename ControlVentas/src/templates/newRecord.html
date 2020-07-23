@@ -1,0 +1,39 @@
+{% extends 'administration.html' %}
+{% block content%}
+
+	<form  action="" method="post"> {% csrf_token %}
+		<table>
+			<tr>
+				<td colspan="5"><h4>Formulario de Registro venta</h4><td>
+			</tr><br />
+			<tr>
+
+				<td><input  type="text" name="cliente"  placeholder="nombre cliente"></td>
+				<td><input  type="date" name="fecha"    placeholder="" ></td>
+				<td><select name="pago">
+					<option value="contado" selected> CONTADO </option>
+					<option value="credito" > CREDITO </option>
+				    </select></td>
+			</tr><br />
+			<tr>
+				<td><input  type="text" name="codigo"  value="100233" ></td>
+				<td><input  type="text" name="producto" placeholder="nombre producto"></td>
+				<td><input  type="number" name="cantidad" id="cantidad" placeholder="Cantidad"></td>
+				<td><input  type="number" name="precioU" id="precio"  step="0.01" placeholder="p/u" onchange="myFunction()" ></td>
+				<td><input  type="number" name="precioV" id="total" step="0.01"  value="0.0" reandoly></td>
+			</tr><br />
+			<tr>
+				<td><input class="botons" type="submit" value="Registrar"></td>
+				<td><p><a href="/">cancelar</a></p></td>
+			</tr>
+  	</form>
+	<script>
+		function myFunction(){
+			var cantidad = parseInt(document.getElementById('cantidad').value)
+			var precio = parseFloat(document.getElementById('precio').value)
+			var total = cantidad * precio
+			document.getElementById('total').value = total;
+		}
+	</script>
+
+{% endblock %}

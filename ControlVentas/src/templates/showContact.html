@@ -1,0 +1,24 @@
+{% extends 'administration.html' %}
+{% block content %}
+
+	<table align="center">
+		<tr>
+			<th><strong>Contacto</strong></th>
+			<th><strong>Email</strong></th>
+			<th><strong>Celular </strong></th>
+			<th><strong>Grado </strong></th>
+		</tr>
+
+		<tr>
+			<td>{{object.name}}</td>
+			<td>{{object.email}}</td>
+			<td>{{object.cellPhone}}</td>
+			<td>{{object.degree}}</td>
+		</tr><br/>
+		<tr>
+			<td><strong>------- </strong></td>
+			<td><a href="/listP"> regresar</a> </td>
+		</tr><br/>
+	</table>
+{% endblock %}
+

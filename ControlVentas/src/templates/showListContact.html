@@ -1,0 +1,28 @@
+{% extends 'administration.html' %}
+{% block content %}
+
+	<table align="center">
+		<tr>
+		<th><strong>Contacto</strong></th>
+		<th><strong>Email</strong></th>
+		<th><strong>Celular </strong></th>
+		<th><strong>Grado </strong></th>
+		<th><strong>Operaciones</strong></th>
+		</tr>
+		{% for obj in object_list %}
+			<tr>
+				<td>{{obj.contact.name}}</td>
+				<td>{{obj.contact.email}}</td>
+				<td>{{obj.contact.cellPhone}}</td>
+				<td>{{obj.contact.degree}}</td>
+				<td><select onchange="window.location.href=this.value">
+					<option value ="list" selected > * </option>
+					<option value ="{{ obj.get_absolute_url }}../deleteC"> borrar</option>
+					<option value = "{{ obj.get_absolute_url }}../updateC"> editar </option>
+			    	     </select>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}
+

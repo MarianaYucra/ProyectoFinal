@@ -1,0 +1,11 @@
+{% extends 'administration.html' %}
+{%  block content %}
+	<table>
+		<tr><p> Estas seguro de querer borrar el cliente:<b> {{ object.name }} </b></p></tr><br />
+		<tr><form action="" method='POST'>{% csrf_token %}
+				<td><input type="submit" value='SI' /></td>
+			<td><a href="/list">Cancelar</a></td>
+		</form></tr><br />
+	</table>
+{% endblock %}
+
