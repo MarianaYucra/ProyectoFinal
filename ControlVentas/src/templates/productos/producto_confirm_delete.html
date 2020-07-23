@@ -1,0 +1,14 @@
+<html>
+<head>
+</head>
+<body>
+	<h1>Borrando Producto</h1>
+	<h2> {{object.nombre }}</h2>
+
+	<form method = "post">{% csrf_token %}
+		<p>Confirme que desea borrar a esta persona</p>
+		<input type = "submit" value = "Confirmar">
+	</form>
+
+</body>
+</html>
