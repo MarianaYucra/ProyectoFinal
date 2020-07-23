@@ -14,6 +14,11 @@ STATE_CHOICES = (
     ('inactive', 'INACTIVO'),
 )
 
+DEGREE_CHOICES = (
+    ('primary', 'PRINCIPAL'),
+    ('secondary', 'SEGUNDARIO'),
+    ('tertiary', 'TERCIARIO'),
+)
 class Cliente(models.Model):
     NIT = models.CharField(max_length=50)
     name = models.CharField(max_length=100)
@@ -27,11 +32,6 @@ class Cliente(models.Model):
     def get_absolute_url(self):
         return reverse('cliente-detail', kwargs= {'pk':self.id})
 
-DEGREE_CHOICES = (
-    ('primary', 'PRINCIPAL'),
-    ('secondary', 'SEGUNDARIO'),
-    ('tertiary', 'TERCIARIO'),
-)
 
 class Contact(models.Model):   
     name = models.CharField(max_length=100, verbose_name="Nombre Contacto")
@@ -41,10 +41,9 @@ class Contact(models.Model):
     degree = models.CharField(max_length = 10, choices = DEGREE_CHOICES, default = 'primary', verbose_name="Nivel Contacto")
     date = models.DateTimeField(auto_now=True)
 
-STATE_CHOICES = (
-    ('active', 'ACTIVO'),
-    ('inactive', 'INACTIVO'),
-)
+    def get_absolute_url(self):
+        return reverse('contacto-detail', kwargs= {'pk':self.id})
+
 
 class Proveedor(models.Model): 
     name = models.CharField(max_length=100, verbose_name="Nombre Empresa Proveedora")
