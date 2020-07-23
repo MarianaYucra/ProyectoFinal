@@ -11,7 +11,6 @@ class Categoria(models.Model):
         return reverse('productos:categoria-detail', kwargs = {'pk': self.id})
 
 
-
 class Producto(models.Model):
     TIPO_CHOICES = ()
 
@@ -20,8 +19,6 @@ class Producto(models.Model):
     for x in obj:
         a = (x.nombre, x.nombre)
         TIPO_CHOICES += (a,)
-
-
 
     nombre = models.CharField(max_length = 10)
     codigo = models.CharField(max_length = 10)
