@@ -1,4 +1,5 @@
-
+{% extends 'administration.html' %}
+{% block content %}
 	<div align="center">
 		<a href="../productos/createProducto"><b>+</b></a>
 		<a href="{{object.get_absolute_url}}"><b>buscar</b></a>
@@ -25,3 +26,4 @@
 		</tr>
 		{% endfor %}
 	</table>
+{% endblock %}

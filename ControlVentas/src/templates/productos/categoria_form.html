@@ -1,3 +1,6 @@
+{% extends 'administration.html' %}
+{% block content %}
+
 <table>
                     <tr>
                         <form  method='POST'>{% csrf_token %}
@@ -10,3 +13,4 @@
                     </tr>
 </table>
 
+{% endblock %}

@@ -1,4 +1,5 @@
-
+{% extends 'administration.html' %}
+{% block content %}
 <table>
 		<tr><p> Estas seguro de querer borrar el producto:<b> {{ object.nombre }} </b></p></tr><br />
 		<tr><form action="" method='POST'>{% csrf_token %}
@@ -6,3 +7,4 @@
 			<td><a href="/productos">Cancelar</a></td>
 		</form></tr><br />
 </table>
+{% endblock %}

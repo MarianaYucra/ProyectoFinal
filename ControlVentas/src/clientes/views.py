@@ -1,12 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Cliente, Contact, Proveedor
 from django.urls import reverse_lazy
-from django.views.generic import (
-        ListView,
-        DetailView,
-        CreateView,
-        DeleteView,
-        UpdateView,
+from django.views.generic import ( ListView, DetailView, CreateView, DeleteView, UpdateView,
     )
 
 # Create your views here.
