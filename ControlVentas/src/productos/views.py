@@ -10,6 +10,7 @@ from django.urls import reverse_lazy
 
 class ProductoUpdateView(UpdateView):
     model = Producto
+    template_name = 'updateObject.html'
     fields = [
             'nombre',
             'codigo',
@@ -29,6 +30,7 @@ class ProductoDetailView(DetailView):
 
 class ProductoCreateView(CreateView):
     model = Producto
+    template_name = 'createObject.html'
     fields = [
             'nombre',
             'codigo',
@@ -38,6 +40,7 @@ class ProductoCreateView(CreateView):
     ]
 class CategoriaUpdateView(UpdateView):
     model = Categoria
+    template_name = 'updateObject.html'
     fields = [
             'nombre',
             'activado',
@@ -54,6 +57,7 @@ class CategoriaDetailView(DetailView):
 
 class CategoriaCreateView(CreateView):
     model = Categoria
+    template_name = 'createObject.html'
     fields = [
             'nombre',
             'activado',

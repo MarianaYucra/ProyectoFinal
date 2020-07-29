@@ -23,7 +23,7 @@ def login(request):
             return redirect('login')
     
     else:
-        return render(request,'login.html')
+        return render(request,'accounts/login.html')
 
 
 def register(request):
@@ -52,7 +52,7 @@ def register(request):
             return redirect('register')
 
     else:
-        return render(request,'register.html')
+        return render(request,'accounts/register.html')
 
 
 def logout(request):

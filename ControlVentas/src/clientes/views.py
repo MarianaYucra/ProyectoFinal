@@ -32,7 +32,7 @@ def showListClient (request):
 
 class ClientCreateView(CreateView):
     model = Cliente
-    template_name = 'insertClient.html'
+    template_name = 'createObject.html'
     fields = [
             'NIT',
             'name',
@@ -59,7 +59,7 @@ class ShowClient(DetailView):
 
 class ClientUpdateView(UpdateView):
     model = Cliente
-    template_name = 'insertClient.html'
+    template_name = 'updateObject.html'
     fields = [
             'NIT',
             'name',
@@ -80,7 +80,7 @@ class ProveedorListView(ListView):
 
 class ProveedorCreateView(CreateView):
     model = Proveedor
-    template_name = 'insertClient.html'
+    template_name = 'createObject.html'
     fields = [
             'name',
             'adress',
@@ -104,7 +104,7 @@ class ProveedorDetailView(DetailView):
 
 class ProveedorUpdateView(UpdateView):
     model = Proveedor
-    template_name = 'insertClient.html'
+    template_name = 'updateObject.html'
     fields = [
             'name',
             'adress',
@@ -125,7 +125,7 @@ class ContactListView(ListView):
 
 class ContactCreateView(CreateView):
     model = Contact
-    template_name = 'insertClient.html'
+    template_name = 'createObject.html'
     fields = [
             'name',
             'email',
@@ -142,12 +142,12 @@ class ContactDetailView(DetailView):
 
 class ContactDeleteView(DeleteView):
     model = Contact
-    template_name = 'deleteClient.html'
+    template_name = 'delete.html'
     success_url = reverse_lazy('proveedor-list')
 
 class ContactUpdateView(UpdateView):
     model = Contact
-    template_name = 'insertClient.html'
+    template_name = 'updateObject.html'
     fields = [
             'name',
             'email',
