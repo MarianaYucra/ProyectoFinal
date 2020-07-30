@@ -29,10 +29,7 @@ def newRecord(request):
     else:
         return render(request,'newRecord.html')
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 6a1610959aee8c6eccfa0fe58379e1c5ea2c28a1
 class VentaListView(ListView):
     model = Venta
 
@@ -59,7 +56,4 @@ class VentaDetailView(DetailView):
 #        'objeto' : obj,
 #    }
 #    return render(request, "listar.html", context)
-<<<<<<< HEAD
 
-=======
->>>>>>> 6a1610959aee8c6eccfa0fe58379e1c5ea2c28a1

@@ -12,8 +12,4 @@ urlpatterns = [
     path('ventas/',VentaListView.as_view(),name = 'venta-list'),
     path('ventas/<int:pk>', VentaDetailView.as_view(), name = 'venta-detail'),
     path('ventas/<int:pk>/update/',VentaUpdateView.as_view(),name = 'venta-update'),
-<<<<<<< HEAD
-=======
-
->>>>>>> 6a1610959aee8c6eccfa0fe58379e1c5ea2c28a1
 ]
