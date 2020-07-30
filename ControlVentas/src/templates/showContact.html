@@ -1,24 +1,65 @@
-{% extends 'administration.html' %}
+{% extends 'examples/administration.html' %}
 {% block content %}
 
-	<table align="center">
-		<tr>
-			<th><strong>Contacto</strong></th>
-			<th><strong>Email</strong></th>
-			<th><strong>Celular </strong></th>
-			<th><strong>Grado </strong></th>
-		</tr>
-
-		<tr>
-			<td>{{object.name}}</td>
-			<td>{{object.email}}</td>
-			<td>{{object.cellPhone}}</td>
-			<td>{{object.degree}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>------- </strong></td>
-			<td><a href="/listP"> regresar</a> </td>
-		</tr><br/>
-	</table>
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Detalle del Contacto</h4>
+                  <p class="card-category">Are you looking for more components? Please check our Premium Version of Material Dashboard.</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive table-upgrade">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th class="text-center">DATOS</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Contacto</td>
+                          <td class="text-center">{{object.name}}</td>
+                        </tr>
+                        <tr>
+                          <td>Correo Electronico</td>
+                          <td class="text-center"> {{object.email}}</td>
+                        </tr>
+                        <tr>
+                          <td># Celular</td>
+                          <td class="text-center">{{object.cellPhone}}</td>
+                        </tr>
+                        <tr>
+                          <td>Telefono</td>
+                          <td class="text-center"> {{object.phone}}</td>
+                        </tr>
+                        <tr>
+                          <td>Grado</td>
+                          <td class="text-center"> {{object.degree}}</td>
+                        </tr>
+                        <tr>
+                          <td>Fecha Registro</td>
+                          <td class="text-center"> {{object.date}}</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"></td>
+                          <td class="text-center"></td>
+                          <td class="text-center">
+                            <a href="/clientes/listaP" class="btn btn-round btn-fill btn-info">Regresar</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
 {% endblock %}
 
