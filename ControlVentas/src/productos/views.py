@@ -16,6 +16,9 @@ class ProductoUpdateView(UpdateView):
             'costo',
             'categoria',
             'marca',
+            'img',
+            'offer',
+            'activado',
     ]
 class ProductoDeleteView(DeleteView):
     model = Producto
@@ -34,13 +37,17 @@ class ProductoCreateView(CreateView):
             'codigo',
             'costo',
             'categoria',
-            'marca',          
+            'marca',   
+            'img',
+            'offer'.
+            'activado',
     ]
 class CategoriaUpdateView(UpdateView):
     model = Categoria
     fields = [
             'nombre',
             'activado',
+            'img'
     ]
 class CategoriaDeleteView(DeleteView):
     model = Categoria
