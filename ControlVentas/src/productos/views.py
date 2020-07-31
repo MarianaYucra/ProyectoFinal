@@ -64,6 +64,7 @@ class CategoriaCreateView(CreateView):
     fields = [
             'nombre',
             'activado',
+            'img',
     ]
 
 #def indexProducto(request):
