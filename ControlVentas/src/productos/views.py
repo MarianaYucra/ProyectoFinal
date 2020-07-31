@@ -1,12 +1,10 @@
 from django.shortcuts import render
-
-# Create your views here.
-
 from .models import Producto
 from .models import Categoria
+from django.urls import reverse_lazy
 from django.views.generic import (ListView, DetailView, DeleteView, UpdateView, CreateView,)
 
-from django.urls import reverse_lazy
+# Create your views here.
 
 class ProductoUpdateView(UpdateView):
     model = Producto
@@ -17,9 +15,11 @@ class ProductoUpdateView(UpdateView):
             'costo',
             'categoria',
             'marca',
+            'estado',
     ]
 class ProductoDeleteView(DeleteView):
     model = Producto
+    template_name = 'deleteObject.html'
     success_url = reverse_lazy('productos:producto-list')
 
 class ProductoListView(ListView):
@@ -36,7 +36,8 @@ class ProductoCreateView(CreateView):
             'codigo',
             'costo',
             'categoria',
-            'marca',          
+            'marca', 
+            'estado',         
     ]
 class CategoriaUpdateView(UpdateView):
     model = Categoria
@@ -47,6 +48,7 @@ class CategoriaUpdateView(UpdateView):
     ]
 class CategoriaDeleteView(DeleteView):
     model = Categoria
+    template_name = 'deleteObject.html'
     success_url = reverse_lazy('productos:producto-list')
 
 class CategoriaListView(ListView):
