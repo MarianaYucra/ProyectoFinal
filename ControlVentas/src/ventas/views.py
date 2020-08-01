@@ -1,12 +1,18 @@
 from django.shortcuts import render,redirect
 from .models import Venta
 from django.views.generic import (ListView, UpdateView, DetailView,)
-
+from productos.models import Producto, Categoria
 
 
 # Create your views here.
 def index (request):
-    return render(request,"index.html")
+    obj = Producto.objects.all() 
+    obj2  = Categoria.objects.all()
+    context = {
+        'obj':obj,
+        'obj2':obj2;
+    }
+    return render(request,"index.html", context)
 
 def administration (request):
     return render(request,"administration.html")
