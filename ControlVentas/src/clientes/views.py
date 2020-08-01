@@ -42,12 +42,12 @@ class ClientCreateView(CreateView):
             'gender',
             'state',
         ]
-    success_url = reverse_lazy('cliente-list')
+    success_url = reverse_lazy('clientes:cliente-list')
 
 class ClientDeleteView(DeleteView):
     model = Cliente
-    template_name = 'deleteClient.html'
-    success_url = reverse_lazy('cliente-list')
+    template_name = 'deleteObject.html'
+    success_url = reverse_lazy('clientes:cliente-list')
 
 class ClientListView(ListView):
     model = Cliente
@@ -69,7 +69,7 @@ class ClientUpdateView(UpdateView):
             'gender',
             'state',
         ]
-    success_url = reverse_lazy('cliente-list')
+    success_url = reverse_lazy('clientes:cliente-list')
 
 #***************************PROVEEDOR*****************************************
 
@@ -94,7 +94,7 @@ class ProveedorCreateView(CreateView):
 
 class ProveedorDeleteView(DeleteView):
     model = Proveedor
-    template_name = 'deleteClient.html'
+    template_name = 'deleteObject.html'
     success_url = reverse_lazy('proveedor-list')
 
 
@@ -142,7 +142,7 @@ class ContactDetailView(DetailView):
 
 class ContactDeleteView(DeleteView):
     model = Contact
-    template_name = 'delete.html'
+    template_name = 'deleteObject.html'
     success_url = reverse_lazy('proveedor-list')
 
 class ContactUpdateView(UpdateView):

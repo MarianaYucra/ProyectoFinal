@@ -3,7 +3,7 @@
 	
       <div class="content">
         <div align="center">
-          <a href="#"><img src="static/images/add_to_queue-24px.svg" /></a>
+          <a href="/clientes/createClient"><img src="static/images/add_to_queue-24px.svg" /></a>
         </div>
         <div class="container-fluid">
           <div class="row">
@@ -51,10 +51,10 @@
                           </td>
                           <td class="text-primary">
                             <select onchange="window.location.href=this.value">
-								<option value ="list" selected > * </option>
-								<option value =""> detalles</option>
-								<option value =""> borrar</option>
-								<option value = ""> editar </option>
+								<option value ="" selected > * </option>
+								<option value ="{{ obj.get_absolute_url }}"> detalles</option>
+								<option value ="{{ obj.get_absolute_url }}../deleteClient"> borrar</option>
+								<option value = "{{ obj.get_absolute_url }}../updateClient"> editar </option>
 			    	     </select>
                           </td>
                         </tr>

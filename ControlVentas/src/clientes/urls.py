@@ -7,13 +7,14 @@ from .views import ( ClientListView, ShowClient, ClientCreateView, ClientDeleteV
 
 app_name = 'clientes'
 urlpatterns = [
-    path('lista/',views.showListClient, name="listaCliente"),
-    path('añadir/',views.newClient, name="nuevoCliente"),
-    path('list/',ClientListView.as_view(), name="cliente-list"),
-    path('create/',ClientCreateView.as_view(), name="cliente-create"),
-    path('<int:pk>/delete/',ClientDeleteView.as_view(), name="cliente-delete"),
-    path('<int:pk>/detail/',ShowClient.as_view(), name="cliente-detail"),
-    path('<int:pk>/update/',ClientUpdateView.as_view(), name="cliente-update"),
+    #path('lista/',views.showListClient, name="listaCliente"),
+    #path('añadir/',views.newClient, name="nuevoCliente"),
+
+    path('listClient/',ClientListView.as_view(), name="cliente-list"),
+    path('createClient/',ClientCreateView.as_view(), name="cliente-create"),
+    path('<int:pk>/deleteClient/',ClientDeleteView.as_view(), name="cliente-delete"),
+    path('<int:pk>/detailClient/',ShowClient.as_view(), name="cliente-detail"),
+    path('<int:pk>/updateClient/',ClientUpdateView.as_view(), name="cliente-update"),
 
     path('listP/',ProveedorListView.as_view(), name="proveedor-list"),
     path('createP/',ProveedorCreateView.as_view(), name="proveedor-create"),
