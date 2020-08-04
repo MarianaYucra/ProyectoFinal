@@ -1,44 +1,73 @@
-{% extends 'administration.html' %}
+{% extends 'examples/administration.html' %}
 {% block content %}
-	<h1 align="center"><b> DETALLES DE CLIENTE </b></h1>
 
-	<table align="center">
-		<tr>
-			<td><strong>NOMBRE: </strong></td>
-			<td>{{object.name}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>DIRECCION: </strong></td>
-			<td>{{object.adress}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>TELEFONO: </strong></td>
-			<td>{{object.phone}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>NIT: </strong></td>
-			<td>{{object.NIT}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>NRC: </strong></td>
-			<td>{{object.NRC}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>GENERO: </strong></td>
-			<td>{{object.gender}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>ESTADO: </strong></td>
-			<td>{{object.state}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>FECHA DE REGISTRO: </strong></td>
-			<td>{{object.date}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>------- </strong></td>
-			<td><a href="/list"> regresar</a> </td>
-		</tr><br/>
-	</table>
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Detalle del Cliente</h4>
+                  <p class="card-category">Are you looking for more components? Please check our Premium Version of Material Dashboard.</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive table-upgrade">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th class="text-center">DATOS</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Nombre</td>
+                          <td class="text-center">{{object.name}}</td>
+                        </tr>
+                        <tr>
+                          <td>Direccion</td>
+                          <td class="text-center"> {{object.adress}}</td>
+                        </tr>
+                        <tr>
+                          <td>Telefono</td>
+                          <td class="text-center">{{object.phone}}</td>
+                        </tr>
+                        <tr>
+                          <td>NIT</td>
+                          <td class="text-center"> {{object.NIT}}</td>
+                        </tr>
+                        <tr>
+                          <td>NRC</td>
+                          <td class="text-center"> {{object.NRC}}</td>
+                        </tr>
+                        <tr>
+                          <td>Genero</td>
+                          <td class="text-center"> {{object.gender}}</td>
+                        </tr>
+                        <tr>
+                          <td>Estado</td>
+                          <td class="text-center"> {{object.state}}</td>
+                        </tr>
+                        <tr>
+                          <td>Fecha Registro</td>
+                          <td class="text-center"> {{object.date}}</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"></td>
+                          <td class="text-center"></td>
+                          <td class="text-center">
+                            <a href="/clientes/listClient" class="btn btn-round btn-fill btn-info">Regresar</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
 {% endblock %}
 

@@ -19,9 +19,13 @@ class Producto(models.Model):
     costo = models.DecimalField(max_digits = 9, decimal_places = 2)
     categoria = models.CharField(max_length = 10,)
     marca = models.CharField(max_length = 10)
+<<<<<<< HEAD
+    estado = models.BooleanField(default = True)
+=======
     img = models.ImageField(upload_to='pics')
     offer = models.BooleanField(default = False)
     activado = models.BooleanField(default = True)
+>>>>>>> df5923b78ffc81bfee55ab9b971f23283b9e0546
 
     def get_absolute_url(self):
         return reverse('productos:producto-detail', kwargs = {'pk': self.id})

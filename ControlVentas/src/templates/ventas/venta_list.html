@@ -1,14 +1,69 @@
-<html>
-<head>
-</head>
-<body>
-        <h1>Lista de ventas</h1>
-        {% for instance in object_list %}
-        <p>
-                {{ instance.id}}
-                <a href = '{{ instance.get_absolute_url }}'>{{ instance.codigo }}</a>
-        </p>
-        {% endfor %}
-</body>
-</html>
+{% extends 'administration.html' %}
+{%  block content %}
+	<div align="center">
+		<a href="#"><b>+</b></a>
+	</div>
+	
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Simple Table</h4>
+                  <p class="card-category"> Here is a subtitle for this table</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          CODIGO
+                        </th>
+                        <th>
+                          ClIENTE
+                        </th>
+                        <th>
+                          FECHA REGISTRO
+                        </th>
+                        <th>
+                          ESTADO
+                        </th>
+                         <th>
+                          VALOR
+                        </th>
+                        <th>
+                          OPERACIONES
+                        </th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            NULL
+                          </td>
+                          <td>
+                            NULL
+                          </td>
+                          <td>
+                            NULL
+                          </td>
+                          <td>
+                            NULL
+                          </td>
+                          <td class="text-primary">
+                            <select onchange="window.location.href=this.value">
+								<option value ="list" selected > * </option>
+								<option value =""> detalles</option>
+								<option value =""> borrar</option>
+								<option value = ""> editar </option>
+			    	     </select>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endblock %}     
 

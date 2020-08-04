@@ -1,65 +1,73 @@
-{% extends 'administration.html' %}
+{% extends 'examples/administration.html' %}
 {% block content %}
-	<h1 align="center"><b> DETALLES DE GENERALES </b></h1>
 
-	<table align="center">
-		<tr colspan = "2">
-                        <th><strong> DETALLES EMPRESA </strong></th>
-                </tr><br/>
-
-		<tr>
-			<td><strong>EMPRESA </strong></td>
-			<td>{{object.name}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>DIRECCION: </strong></td>
-			<td>{{object.adress}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>TELEFONO: </strong></td>
-			<td>{{object.phone}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>NIT: </strong></td>
-			<td>{{object.NIT}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>FAX: </strong></td>
-			<td>{{object.FAX}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>ESTADO: </strong></td>
-			<td>{{object.state}}</td>
-		</tr><br/>
-		<tr>
-			<td><strong>FECHA DE REGISTRO: </strong></td>
-			<td>{{object.date}}</td>
-		</tr><br/>
-		<tr colspan = "2">
-                        <th><strong> DETALLES CONTACTOS </strong></th>
-                </tr><br/>
-		{% for obj in object_list.contact %}
-		     {% if obj.state == "active" %}
-
-			<tr>
-				<td>{{obj.name}}</td>
-				<td>{{obj.email}}</td>
-				<td>{{obj.cellPhone}}</td>
-				<td>{{obj.degree}}</td>
-				<td><select onchange="window.location.href=this.value">
-					<option value ="list" selected > * </option>
-					<option value ="{{ obj.get_absolute_url }}../deleteC"> borrar</option>
-					<option value = "{{ obj.get_absolute_url }}../updateC"> editar </option>
-			    	     </select>
-				</td>
-			</tr>
-		    {% endif %}
-		{% endfor %}
-
-		<tr>
-			<td><strong>------- </strong></td>
-			<td><a href="/listP"> regresar</a> </td>
-		</tr><br/>
-	</table>
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Detalle del Proveedor</h4>
+                  <p class="card-category">Are you looking for more components? Please check our Premium Version of Material Dashboard.</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive table-upgrade">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th class="text-center">DATOS</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Empresa</td>
+                          <td class="text-center">{{object.name}}</td>
+                        </tr>
+                        <tr>
+                          <td>Direccion</td>
+                          <td class="text-center"> {{object.adress}}</td>
+                        </tr>
+                        <tr>
+                          <td>Telefono</td>
+                          <td class="text-center">{{object.phone}}</td>
+                        </tr>
+                        <tr>
+                          <td>NIT</td>
+                          <td class="text-center"> {{object.NIT}}</td>
+                        </tr>
+                        <tr>
+                          <td>FAX</td>
+                          <td class="text-center"> {{object.FAX}}</td>
+                        </tr>
+                        <tr>
+                          <td>Contacto Primario</td>
+                          <td class="text-center"> {{object.contact.name}}</td>
+                        </tr>
+                        <tr>
+                          <td>Estado</td>
+                          <td class="text-center"> {{object.state}}</td>
+                        </tr>
+                        <tr>
+                          <td>Fecha Registro</td>
+                          <td class="text-center"> {{object.date}}</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"></td>
+                          <td class="text-center"></td>
+                          <td class="text-center">
+                            <a href="/clientes/list" class="btn btn-round btn-fill btn-info">Regresar</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
 {% endblock %}
 
