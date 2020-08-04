@@ -1,24 +1,25 @@
 from django.shortcuts import render
+from .models import Producto
+from .models import Categoria
+from django.urls import reverse_lazy
+from django.views.generic import (ListView, DetailView, DeleteView, UpdateView, CreateView,)
 
 # Create your views here.
 
-from .models import Producto
-from .models import Categoria
-from django.views.generic import (ListView, DetailView, DeleteView, UpdateView, CreateView,)
-
-from django.urls import reverse_lazy
-
 class ProductoUpdateView(UpdateView):
     model = Producto
+    template_name = 'updateObject.html'
     fields = [
             'nombre',
             'codigo',
             'costo',
             'categoria',
             'marca',
+            'estado',
     ]
 class ProductoDeleteView(DeleteView):
     model = Producto
+    template_name = 'deleteObject.html'
     success_url = reverse_lazy('productos:producto-list')
 
 class ProductoListView(ListView):
@@ -29,21 +30,25 @@ class ProductoDetailView(DetailView):
 
 class ProductoCreateView(CreateView):
     model = Producto
+    template_name = 'createObject.html'
     fields = [
             'nombre',
             'codigo',
             'costo',
             'categoria',
-            'marca',          
+            'marca', 
+            'estado',         
     ]
 class CategoriaUpdateView(UpdateView):
     model = Categoria
+    template_name = 'updateObject.html'
     fields = [
             'nombre',
             'activado',
     ]
 class CategoriaDeleteView(DeleteView):
     model = Categoria
+    template_name = 'deleteObject.html'
     success_url = reverse_lazy('productos:producto-list')
 
 class CategoriaListView(ListView):
@@ -54,6 +59,7 @@ class CategoriaDetailView(DetailView):
 
 class CategoriaCreateView(CreateView):
     model = Categoria
+    template_name = 'createObject.html'
     fields = [
             'nombre',
             'activado',

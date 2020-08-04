@@ -1,23 +1,68 @@
-<div align="center">
-        <a href="/productos/categoria"><b>buscar</b></a>
-</div>
+{% extends 'examples/administration.html' %}
+{% block content %}
 
-<table align="center">
-	<tr>
-		<th><strong>ID</strong></th>
-		<th><strong>Nombre</strong></th>
-		<th><strong>Estado</strong></th>
-		<th><strong>Operaciones</strong></th>
-	</tr>
-	<tr>
-		<td>{{object.codigo}}</td>
-		<td>{{object.nombre}}</td>
-		<td>{{object.costo}}</td>
-		<td><select>
-				<option selected> * </option>
-				<option><a href="borrar"> borrar</a> </option>
-				<option><a href="editar"> editar</a> </option>
-		    </select>
-		</td>
-	</tr>
-</table>
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Detalle del Producto</h4>
+                  <p class="card-category">Are you looking for more components? Please check our Premium Version of Material Dashboard.</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive table-upgrade">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th class="text-center">DATOS</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Codigo</td>
+                          <td class="text-center">{{object.codigo}}</td>
+                        </tr>
+                        <tr>
+                          <td>Nombre</td>
+                          <td class="text-center"> {{object.nombre}}</td>
+                        </tr>
+                        <tr>
+                          <td>Costo</td>
+                          <td class="text-center">{{object.costo}}</td>
+                        </tr>
+                        <tr>
+                          <td>Categoria</td>
+                          <td class="text-center"> {{object.categoria}}</td>
+                        </tr>
+                        <tr>
+                          <td>Marca</td>
+                          <td class="text-center"> {{object.marca}}</td>
+                        </tr>
+                          <td>Estado</td>
+                          <td class="text-center"> {{object.estado}}</td>
+                        </tr>
+                        <tr>
+                          <td>Fecha Registro</td>
+                          <td class="text-center"> </td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"></td>
+                          <td class="text-center"></td>
+                          <td class="text-center">
+                            <a href="/clientes/list" class="btn btn-round btn-fill btn-info">Regresar</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+{% endblock %}
+

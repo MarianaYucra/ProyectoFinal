@@ -1,12 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Cliente, Contact, Proveedor
 from django.urls import reverse_lazy
-from django.views.generic import (
-        ListView,
-        DetailView,
-        CreateView,
-        DeleteView,
-        UpdateView,
+from django.views.generic import ( ListView, DetailView, CreateView, DeleteView, UpdateView,
     )
 
 # Create your views here.
@@ -37,7 +32,7 @@ def showListClient (request):
 
 class ClientCreateView(CreateView):
     model = Cliente
-    template_name = 'insertClient.html'
+    template_name = 'createObject.html'
     fields = [
             'NIT',
             'name',
@@ -47,12 +42,12 @@ class ClientCreateView(CreateView):
             'gender',
             'state',
         ]
-    success_url = reverse_lazy('cliente-list')
+    success_url = reverse_lazy('clientes:cliente-list')
 
 class ClientDeleteView(DeleteView):
     model = Cliente
-    template_name = 'deleteClient.html'
-    success_url = reverse_lazy('cliente-list')
+    template_name = 'deleteObject.html'
+    success_url = reverse_lazy('clientes:cliente-list')
 
 class ClientListView(ListView):
     model = Cliente
@@ -64,7 +59,7 @@ class ShowClient(DetailView):
 
 class ClientUpdateView(UpdateView):
     model = Cliente
-    template_name = 'insertClient.html'
+    template_name = 'updateObject.html'
     fields = [
             'NIT',
             'name',
@@ -74,7 +69,7 @@ class ClientUpdateView(UpdateView):
             'gender',
             'state',
         ]
-    success_url = reverse_lazy('cliente-list')
+    success_url = reverse_lazy('clientes:cliente-list')
 
 #***************************PROVEEDOR*****************************************
 
@@ -85,7 +80,7 @@ class ProveedorListView(ListView):
 
 class ProveedorCreateView(CreateView):
     model = Proveedor
-    template_name = 'insertClient.html'
+    template_name = 'createObject.html'
     fields = [
             'name',
             'adress',
@@ -99,7 +94,7 @@ class ProveedorCreateView(CreateView):
 
 class ProveedorDeleteView(DeleteView):
     model = Proveedor
-    template_name = 'deleteClient.html'
+    template_name = 'deleteObject.html'
     success_url = reverse_lazy('proveedor-list')
 
 
@@ -109,7 +104,7 @@ class ProveedorDetailView(DetailView):
 
 class ProveedorUpdateView(UpdateView):
     model = Proveedor
-    template_name = 'insertClient.html'
+    template_name = 'updateObject.html'
     fields = [
             'name',
             'adress',
@@ -130,7 +125,7 @@ class ContactListView(ListView):
 
 class ContactCreateView(CreateView):
     model = Contact
-    template_name = 'insertClient.html'
+    template_name = 'createObject.html'
     fields = [
             'name',
             'email',
@@ -147,12 +142,12 @@ class ContactDetailView(DetailView):
 
 class ContactDeleteView(DeleteView):
     model = Contact
-    template_name = 'deleteClient.html'
+    template_name = 'deleteObject.html'
     success_url = reverse_lazy('proveedor-list')
 
 class ContactUpdateView(UpdateView):
     model = Contact
-    template_name = 'insertClient.html'
+    template_name = 'updateObject.html'
     fields = [
             'name',
             'email',
