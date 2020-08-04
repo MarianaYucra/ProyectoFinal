@@ -39,7 +39,7 @@ class ProductoCreateView(CreateView):
             'categoria',
             'marca',   
             'img',
-            'offer'.
+            'offer',
             'activado',
     ]
 class CategoriaUpdateView(UpdateView):
