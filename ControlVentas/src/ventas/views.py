@@ -18,6 +18,9 @@ def administration (request):
     return render(request,"examples/administration.html")
 
 def newRecord(request):
+
+
+    template_name = 'createObject.html'
     if request.method == 'POST':
         codigo = request.POST['codigo']
         cliente = request.POST['cliente']
@@ -33,7 +36,7 @@ def newRecord(request):
         return redirect('/')
 
     else:
-        return render(request,'newRecord.html')
+        return render(request,'createObject.html')
 
 
 class VentaListView(ListView):

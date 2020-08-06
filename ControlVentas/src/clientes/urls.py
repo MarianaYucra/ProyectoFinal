@@ -24,7 +24,7 @@ urlpatterns = [
     
     path('listC/',ContactListView.as_view(), name="contacto-list"),
     path('createC/',ContactCreateView.as_view(), name="contacto-create"),
-    path('<int:pk>/deleteC/',ContactDeleteView.as_view(), name="contact-delete"),
+    path('<int:pk>/deleteC/',ContactDeleteView.as_view(), name="contacto-delete"),
     path('<int:pk>/detailC/',ContactDetailView.as_view(), name="contacto-detail"),
     path('<int:pk>/updateC/',ContactUpdateView.as_view(), name="contacto-update"),
 ]

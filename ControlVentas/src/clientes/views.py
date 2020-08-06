@@ -90,12 +90,12 @@ class ProveedorCreateView(CreateView):
             'FAX',
             'state',
         ]
-    success_url = reverse_lazy('Proveedor-list')
+    success_url = reverse_lazy('clientes:proveedor-list')
 
 class ProveedorDeleteView(DeleteView):
     model = Proveedor
     template_name = 'deleteObject.html'
-    success_url = reverse_lazy('proveedor-list')
+    success_url = reverse_lazy('clientes:proveedor-list')
 
 
 class ProveedorDetailView(DetailView):
@@ -114,12 +114,12 @@ class ProveedorUpdateView(UpdateView):
             'FAX',
             'state',
         ]
-    success_url = reverse_lazy('Proveedor-list')
+    success_url = reverse_lazy('clientes:proveedor-list')
 
 #***************************Contact*****************************************
 
 class ContactListView(ListView):
-    model = Proveedor
+    model = Contact
     template_name = 'showListContact.html'
 
 
@@ -133,7 +133,7 @@ class ContactCreateView(CreateView):
             'cellPhone',
             'degree',
         ]
-    success_url = reverse_lazy('Proveedor-list')
+    success_url = reverse_lazy('clientes:contacto-list')
 
 class ContactDetailView(DetailView):
     model = Contact
@@ -143,7 +143,7 @@ class ContactDetailView(DetailView):
 class ContactDeleteView(DeleteView):
     model = Contact
     template_name = 'deleteObject.html'
-    success_url = reverse_lazy('proveedor-list')
+    success_url = reverse_lazy('clientes:contacto-list')
 
 class ContactUpdateView(UpdateView):
     model = Contact
@@ -155,4 +155,4 @@ class ContactUpdateView(UpdateView):
             'cellPhone',
             'degree',
         ]
-    success_url = reverse_lazy('Proveedor-list')
+    success_url = reverse_lazy('clientes:contacto-list')

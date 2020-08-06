@@ -6,8 +6,8 @@ from .views import (VentaListView, VentaDetailView, VentaUpdateView)
 app_name = 'ventas'
 urlpatterns = [
     path('', views.index, name="index"),
-    #path('añadir/',views.newRecord, name="nuevoRegistro"),
-    path('administrar',views.administration, name="administrar"),
+    path('añadir/',views.newRecord, name="nuevoRegistro"),
+    path('administrar/',views.administration, name="administrar"),
     #path('listar/', views.listar, name = "listar"),
     path('ventas/',VentaListView.as_view(),name = 'venta-list'),
     path('ventas/<int:pk>', VentaDetailView.as_view(), name = 'venta-detail'),
