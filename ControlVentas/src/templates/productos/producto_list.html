@@ -3,7 +3,7 @@
 	
       <div class="content">
         <div align="center">
-          <a href="#"><img src="static/images/add_to_queue-24px.svg" /></a>
+          <a href="./createProducto"><img src="static/images/add_to_queue-24px.svg" /></a>
         </div>
         <div class="container-fluid">
           <div class="row">
@@ -18,16 +18,13 @@
                     <table class="table">
                       <thead class=" text-primary">
                         <th>
-                          EMPRESA
+                          CÓDIGO
                         </th>
                         <th>
-                          TELEFONO
+                          NOMBRE
                         </th>
                         <th>
-                          DIRECCION
-                        </th>
-                        <th>
-                          CONTACTO
+                          COSTO
                         </th>
                         <th>
                           OPERACIONES
@@ -37,23 +34,20 @@
                       <tbody>
                         <tr>
                           <td>
-                            {{obj.name}}
+                            {{obj.codigo}}
                           </td>
                           <td>
-                            {{obj.phone}}
+                            {{obj.nombre}}
                           </td>
                           <td>
-                            {{obj.adress}}
-                          </td>
-                          <td>
-                            {{obj.contact.name}}
+                            {{obj.costo}}
                           </td>
                           <td class="text-primary">
                             <select onchange="window.location.href=this.value">
 								<option value ="list" selected > * </option>
 								<option value ="{{ obj.get_absolute_url }}"> detalles</option>
-								<option value ="{{ obj.get_absolute_url }}"> borrar</option>
-								<option value = "{{ obj.get_absolute_url }}"> editar </option>
+								<option value ="{{ obj.get_absolute_url }}/delete"> borrar</option>
+								<option value = "{{ obj.get_absolute_url }}/update"> editar </option>
 			    	     </select>
                           </td>
                         </tr>

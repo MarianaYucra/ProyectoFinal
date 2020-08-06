@@ -1,9 +1,9 @@
 {% extends 'examples/administration.html' %}
 {%  block content %}
 	
-     <div class="content">
+      <div class="content">
         <div align="center">
-          <a href="#"><img src="static/images/add_to_queue-24px.svg" /></a>
+          <a href="/clientes/createP"><img src="static/images/add_to_queue-24px.svg" /></a>
         </div>
         <div class="container-fluid">
           <div class="row">
@@ -18,16 +18,16 @@
                     <table class="table">
                       <thead class=" text-primary">
                         <th>
-                          CODIGO
+                          EMPRESA
                         </th>
                         <th>
-                          NOMBRE
+                          TELEFONO
                         </th>
                         <th>
-                          COSTO
+                          DIRECCION
                         </th>
                         <th>
-                          ESTADO
+                          CONTACTO
                         </th>
                         <th>
                           OPERACIONES
@@ -37,23 +37,23 @@
                       <tbody>
                         <tr>
                           <td>
-                            {{obj.codigo}}
+                            {{obj.name}}
                           </td>
                           <td>
-                            {{obj.nombre}}
+                            {{obj.phone}}
                           </td>
                           <td>
-                            {{obj.costo}}
+                            {{obj.adress}}
                           </td>
                           <td>
-                            {{obj.estado}}
+                            {{obj.contact.name}}
                           </td>
                           <td class="text-primary">
                             <select onchange="window.location.href=this.value">
 								<option value ="list" selected > * </option>
 								<option value ="{{ obj.get_absolute_url }}"> detalles</option>
-								<option value ="{{ obj.get_absolute_url }}"> borrar</option>
-								<option value = "{{ obj.get_absolute_url }}"> editar </option>
+								<option value ="{{ obj.get_absolute_url }}../deleteP"> borrar</option>
+								<option value = "{{ obj.get_absolute_url }}../updateP"> editar </option>
 			    	     </select>
                           </td>
                         </tr>
@@ -65,4 +65,3 @@
               </div>
             </div>
 {% endblock %}     
-

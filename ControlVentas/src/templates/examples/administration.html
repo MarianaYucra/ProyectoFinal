@@ -1,4 +1,6 @@
 {% load static %}
+{% static "images" as baseUrl%}
+
 <!--
 =========================================================
 Material Dashboard - v2.1.2
@@ -45,52 +47,46 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="administrar">
+            <a class="nav-link" href="http://127.0.0.1:8000/administrar">
               <i class="material-icons">dashboard</i>
               <p>Principal</p>
             </a>
           </li>
           
           <li class="nav-item ">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="http://127.0.0.1:8000/ventas">
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <p>Ventas</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="http://127.0.0.1:8000/productos/categoria/">
               <i class="material-icons">library_books</i>
-              <p>Typography</p>
+              <p>Categoria</p>
             </a>
+	  </li>
+	  <li class="nav-item ">
+            <a class="nav-link" href="http://127.0.0.1:8000/productos/">
+              <i class="material-icons">bubble_chart</i>
+              <p>Productos</p>
+            </a>
+          </li>
           <li class="nav-item ">
-            <a class="nav-link" href="clientes/listClient">
+            <a class="nav-link" href="http://127.0.0.1:8000/clientes/listClient">
               <i class="material-icons">person</i>
               <p>Clientes</p>
             </a>
           </li>
-          </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
+            <a class="nav-link" href="http://127.0.0.1:8000/clientes/listC">
               <i class="material-icons">location_ons</i>
-              <p>Maps</p>
+              <p>Contactos</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
+            <a class="nav-link" href="http://127.0.0.1:8000/clientes/listP">
               <i class="material-icons">language</i>
-              <p>RTL Support</p>
+              <p>Proveedores</p>
             </a>
           </li>
           <li class="nav-item active-pro ">

@@ -46,7 +46,7 @@ class Contact(models.Model):
     date = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
-        return reverse('contacto-detail', kwargs= {'pk':self.id})
+        return reverse('clientes:contacto-detail', kwargs= {'pk':self.id})
 
 #**************Modelo Proveedor*********************************************
 
@@ -62,5 +62,5 @@ class Proveedor(models.Model):
 
 
     def get_absolute_url(self):
-        return reverse('proveedor-detail', kwargs= {'pk':self.id})
+        return reverse('clientes:proveedor-detail', kwargs= {'pk':self.id})
 

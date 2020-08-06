@@ -3,7 +3,7 @@
 
       <div class="content">
         <div align="center">
-          <a href="#"><img src="static/images/add_to_queue-24px.svg" /></a>
+          <a href="./createCategoria"><img src="static/images/add_to_queue-24px.svg" /></a>
         </div>
         <div class="container-fluid">
           <div class="row">
@@ -46,8 +46,8 @@
                             <select onchange="window.location.href=this.value">
 								<option value ="list" selected > * </option>
 								<option value ="{{ obj.get_absolute_url }}"> detalles</option>
-								<option value ="{{ obj.get_absolute_url }}"> borrar</option>
-								<option value = "{{ obj.get_absolute_url }}"> editar </option>
+								<option value ="{{ obj.get_absolute_url }}/delete"> borrar</option>
+								<option value = "{{ obj.get_absolute_url }}/update"> editar </option>
 			    	     </select>
                           </td>
                         </tr>

@@ -15,13 +15,9 @@ class ProductoUpdateView(UpdateView):
             'costo',
             'categoria',
             'marca',
-<<<<<<< HEAD
-            'estado',
-=======
             'img',
             'offer',
             'activado',
->>>>>>> df5923b78ffc81bfee55ab9b971f23283b9e0546
     ]
 class ProductoDeleteView(DeleteView):
     model = Producto
@@ -42,15 +38,10 @@ class ProductoCreateView(CreateView):
             'codigo',
             'costo',
             'categoria',
-<<<<<<< HEAD
-            'marca', 
-            'estado',         
-=======
             'marca',   
             'img',
             'offer',
             'activado',
->>>>>>> df5923b78ffc81bfee55ab9b971f23283b9e0546
     ]
 class CategoriaUpdateView(UpdateView):
     model = Categoria
