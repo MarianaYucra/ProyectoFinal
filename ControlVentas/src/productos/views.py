@@ -4,6 +4,13 @@ from .models import Categoria
 from django.urls import reverse_lazy
 from django.views.generic import (ListView, DetailView, DeleteView, UpdateView, CreateView,)
 
+from django.http import HttpResponse
+from django.views.generic import View
+from django.template.loader import get_template
+from .utils import render_to_pdf #created in step 4
+
+
+
 # Create your views here.
 
 class ProductoUpdateView(UpdateView):
@@ -70,6 +77,49 @@ class CategoriaCreateView(CreateView):
             'activado',
             'img',
     ]
+
+
+class GeneratePDF(View):
+    def get(self, request, *args, **kwargs):
+        template = get_template('pdf/pdfProductos.html')
+        obj  = Producto.objects.all()
+        context = {
+            'obj':obj,
+        }   
+        html = template.render(context)
+        pdf = render_to_pdf('pdf/pdfProductos.html', context)
+        if pdf:
+            response = HttpResponse(pdf, content_type='application/pdf')
+            filename = "Invoice_%s.pdf" %("12341231")
+            content = "inline; filename='%s'" %(filename)
+            download = request.GET.get("download")
+            if download:
+                content = "attachment; filename='%s'" %(filename)
+            response['Content-Disposition'] = content
+            return response
+        return HttpResponse("Not found")
+
+
+class GeneratePDFCategoria(View):
+    def get(self, request, *args, **kwargs):
+        template = get_template('pdf/pdfCategorias.html')
+        obj  = Categoria.objects.all()
+        context = {
+            'obj':obj,
+        }
+        html = template.render(context)
+        pdf = render_to_pdf('pdf/pdfCategorias.html', context)
+        if pdf:
+            response = HttpResponse(pdf, content_type='application/pdf')
+            filename = "Invoice_%s.pdf" %("12341231")
+            content = "inline; filename='%s'" %(filename)
+            download = request.GET.get("download")
+            if download:
+                content = "attachment; filename='%s'" %(filename)
+            response['Content-Disposition'] = content
+            return response
+        return HttpResponse("Not found")
+
 
 #def indexProducto(request):
     #return render(request,"indexProducto.html")
