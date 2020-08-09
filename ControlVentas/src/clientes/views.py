@@ -4,6 +4,13 @@ from django.urls import reverse_lazy
 from django.views.generic import ( ListView, DetailView, CreateView, DeleteView, UpdateView,
     )
 
+
+from django.http import HttpResponse
+from django.views.generic import View
+from django.template.loader import get_template
+from .utils import render_to_pdf #created in step 4
+
+
 # Create your views here.
 
 def newClient(request):
@@ -156,3 +163,68 @@ class ContactUpdateView(UpdateView):
             'degree',
         ]
     success_url = reverse_lazy('clientes:contacto-list')
+
+
+
+
+class GeneratePDFCliente(View):
+    def get(self, request, *args, **kwargs):
+        template = get_template('pdf/pdfCliente.html')
+        obj  = Cliente.objects.all()
+        context = {
+            'obj':obj,
+        }
+        html = template.render(context)
+        pdf = render_to_pdf('pdf/pdfCliente.html', context)
+        if pdf:
+            response = HttpResponse(pdf, content_type='application/pdf')
+            filename = "CLientee_%s.pdf" %("12341231")
+            content = "inline; filename='%s'" %(filename)
+            download = request.GET.get("download")
+            if download:
+                content = "attachment; filename='%s'" %(filename)
+            response['Content-Disposition'] = content
+            return response
+        return HttpResponse("Not found")
+
+
+class GeneratePDFContacto(View):
+    def get(self, request, *args, **kwargs):
+        template = get_template('pdf/pdfContacto.html')
+        obj  = Contact.objects.all()
+        context = {
+            'obj':obj,
+        }
+        html = template.render(context)
+        pdf = render_to_pdf('pdf/pdfContacto.html', context)
+        if pdf:
+            response = HttpResponse(pdf, content_type='application/pdf')
+            filename = "Contacto_%s.pdf" %("12341231")
+            content = "inline; filename='%s'" %(filename)
+            download = request.GET.get("download")
+            if download:
+                content = "attachment; filename='%s'" %(filename)
+            response['Content-Disposition'] = content
+            return response
+        return HttpResponse("Not found")
+
+class GeneratePDFProveedor(View):
+    def get(self, request, *args, **kwargs):
+        template = get_template('pdf/pdfProveedor.html')
+        obj  = Proveedor.objects.all()
+        context = {
+            'obj':obj,
+        }
+        html = template.render(context)
+        pdf = render_to_pdf('pdf/pdfProveedor.html', context)
+        if pdf:
+            response = HttpResponse(pdf, content_type='application/pdf')
+            filename = "Proveedor_%s.pdf" %("12341231")
+            content = "inline; filename='%s'" %(filename)
+            download = request.GET.get("download")
+            if download:
+                content = "attachment; filename='%s'" %(filename)
+            response['Content-Disposition'] = content
+            return response
+        return HttpResponse("Not found")
+

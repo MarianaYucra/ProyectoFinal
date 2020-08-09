@@ -3,6 +3,7 @@ from . import views
 from .views import ( ClientListView, ShowClient, ClientCreateView, ClientDeleteView, ClientUpdateView,
         ProveedorListView, ProveedorCreateView, ProveedorDeleteView, ProveedorDetailView, ProveedorUpdateView,
         ContactListView, ContactCreateView, ContactDeleteView, ContactDetailView, ContactUpdateView,
+        GeneratePDFContacto, GeneratePDFCliente, GeneratePDFProveedor,
         )
 
 app_name = 'clientes'
@@ -27,5 +28,10 @@ urlpatterns = [
     path('<int:pk>/deleteC/',ContactDeleteView.as_view(), name="contacto-delete"),
     path('<int:pk>/detailC/',ContactDetailView.as_view(), name="contacto-detail"),
     path('<int:pk>/updateC/',ContactUpdateView.as_view(), name="contacto-update"),
+
+    path('pdfContacto/',GeneratePDFContacto.as_view()),
+    path('pdfCliente/',GeneratePDFCliente.as_view()),
+    path('pdfProveedor/',GeneratePDFProveedor.as_view()),
+
 ]
 
