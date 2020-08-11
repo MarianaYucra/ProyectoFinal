@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import (VentaListView, VentaDetailView, VentaUpdateView)
+from .views import (VentaListView, VentaDetailView, VentaUpdateView, GeneratePDFVenta)
 
 
 app_name = 'ventas'
@@ -12,4 +12,5 @@ urlpatterns = [
     path('ventas/',VentaListView.as_view(),name = 'venta-list'),
     path('ventas/<int:pk>', VentaDetailView.as_view(), name = 'venta-detail'),
     path('ventas/<int:pk>/update/',VentaUpdateView.as_view(),name = 'venta-update'),
+    path('ventas/pdfVenta/',GeneratePDFVenta.as_view()),
 ]

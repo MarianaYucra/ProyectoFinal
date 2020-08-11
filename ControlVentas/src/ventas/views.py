@@ -4,6 +4,13 @@ from django.views.generic import (ListView, UpdateView, DetailView,)
 from productos.models import Producto, Categoria
 
 
+
+from django.http import HttpResponse
+from django.views.generic import View
+from django.template.loader import get_template
+from .utils import render_to_pdf #created in step 4
+
+
 # Create your views here.
 def index (request):
     obj2 = Producto.objects.all() 
@@ -58,6 +65,32 @@ class VentaUpdateView(UpdateView):
     ]
 class VentaDetailView(DetailView):
     model = Venta
+
+
+
+
+
+
+
+class GeneratePDFVenta(View):
+    def get(self, request, *args, **kwargs):
+        template = get_template('pdf/pdfVenta.html')
+        obj  = Venta.objects.all()
+        context = {
+            'obj':obj,
+        }
+        html = template.render(context)
+        pdf = render_to_pdf('pdf/pdfVenta.html', context)
+        if pdf:
+            response = HttpResponse(pdf, content_type='application/pdf')
+            filename = "VEnta_%s.pdf" %("12341231")
+            content = "inline; filename='%s'" %(filename)
+            download = request.GET.get("download")
+            if download:
+                content = "attachment; filename='%s'" %(filename)
+            response['Content-Disposition'] = content
+            return response
+        return HttpResponse("Not found")
 
 #def listar(request):
 #    obj = Venta.objects.all()
