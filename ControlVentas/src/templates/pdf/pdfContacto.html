@@ -43,9 +43,8 @@
             </div>
         <div>
         <div class='details'>
-            Bill to: <br/>
-            Amount:  <br/>
-            Date: 
+            Tienda: Toñito <br/>
+            RUC: 123456 <br/>
             <hr class='hrItem' />
         </div>
     </div>
@@ -59,8 +58,21 @@
                           NOMBRE
                         </th>
                         <th>
-                          ESTADO
+                          EMAIL
                         </th>
+			<th>
+                          TELÉFONO
+                        </th>
+                        <th>
+                          CELUALAR
+                        </th>
+			<th>
+                          LICENCIATURA
+                        </th>
+                        <th>
+                          DATE
+                        </th>
+
                       </thead>
                       {% for obj in obj %}
                       <tbody>
@@ -69,11 +81,24 @@
                             {{obj.id}}
                           </td>
                           <td>
-                            {{obj.nombre}}
+                            {{obj.name}}
+                          </td>
+			  <td>
+                            {{obj.email}}
                           </td>
                           <td>
-                            {{obj.activado}}
-                          </td>              
+                            {{obj.phone}}
+                          </td>        
+			  <td>
+                            {{obj.cellPhone}}
+                          </td>
+                          <td>
+                            {{obj.degree}}
+                          </td>
+			  <td>
+                            {{obj.date}}
+                          </td>
+
                         </tr>
                       </tbody>
                       {% endfor %}

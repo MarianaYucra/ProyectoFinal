@@ -8,7 +8,7 @@
                 font-size: 14px;
             }
             .header {
-                font-size: 20px;
+                font-size: 15px;
                 font-weight: 100;
                 text-align: center;
                 color: #007cae;
@@ -23,7 +23,7 @@
                 color: #007cae;
             }
             .details {
-                padding: 10px 20px 0px 20px;
+                padding: 10px 10px 0px 10px;
                 text-align: left !important;
                 /*margin-left: 40%;*/
             }
@@ -43,9 +43,8 @@
             </div>
         <div>
         <div class='details'>
-            Bill to: <br/>
-            Amount:  <br/>
-            Date: 
+            Tienda: Don Toñito<br/>
+            Ruc: 123456 <br/> 
             <hr class='hrItem' />
         </div>
     </div>
@@ -59,7 +58,25 @@
                           NOMBRE
                         </th>
                         <th>
+                          DIRECCIÓN
+                        </th>
+			<th>
+                          TELÉFONO
+                        </th>
+			<th>
+                          NIT
+                        </th>
+			<th>
+                          NRC
+                        </th>
+			<th>
+                          GÉNERO
+                        </th>
+			<th>
                           ESTADO
+                        </th>
+			<th>
+                          FECHA
                         </th>
                       </thead>
                       {% for obj in obj %}
@@ -69,11 +86,29 @@
                             {{obj.id}}
                           </td>
                           <td>
-                            {{obj.nombre}}
+                            {{obj.name}}
                           </td>
                           <td>
-                            {{obj.activado}}
-                          </td>              
+                            {{obj.adress}}
+                          </td>
+			  <td>
+                            {{obj.phone}}
+                          </td>
+			  <td>
+                            {{obj.NIT}}
+                          </td>
+			  <td>
+                            {{obj.NRC}}
+                          </td>
+			  <td>
+                            {{obj.gender}}
+                          </td>
+			  <td>
+                            {{obj.state}}
+                          </td>
+			  <td>
+                            {{obj.date}}
+                          </td>
                         </tr>
                       </tbody>
                       {% endfor %}

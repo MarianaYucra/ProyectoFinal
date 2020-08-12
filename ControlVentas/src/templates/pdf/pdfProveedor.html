@@ -43,9 +43,8 @@
             </div>
         <div>
         <div class='details'>
-            Bill to: <br/>
-            Amount:  <br/>
-            Date: 
+            Tienda: Don TOñito<br/>
+            RUC: 123456 <br/> 
             <hr class='hrItem' />
         </div>
     </div>
@@ -56,10 +55,24 @@
                           ID
                         </th>
                         <th>
-                          NOMBRE
+                   	  NOMBRE
                         </th>
                         <th>
+                          DIRECCIÓN
+                        </th>
+			  <th>
+                          CONTACT
+                        </th>
+                        <th>
+                          PHONE
+                        </th>
+                        <th>
+                          FAX
+                        </th>  <th>
                           ESTADO
+                        </th>
+                        <th>
+                          FECHA
                         </th>
                       </thead>
                       {% for obj in obj %}
@@ -69,11 +82,29 @@
                             {{obj.id}}
                           </td>
                           <td>
-                            {{obj.nombre}}
+                            {{obj.name}}
                           </td>
                           <td>
-                            {{obj.activado}}
-                          </td>              
+                            {{obj.adress}}
+                          </td>         
+			  <td>
+                            {{obj.contact}}
+                          </td>
+                          <td>
+                            {{obj.NIT}}
+                          </td>
+                          <td>
+                            {{obj.phone}}
+                          </td>
+			  <td>
+                            {{obj.FAX}}
+                          </td>
+                          <td>
+                            {{obj.state}}
+                          </td>
+                          <td>
+                            {{obj.date}}
+                          </td>
                         </tr>
                       </tbody>
                       {% endfor %}

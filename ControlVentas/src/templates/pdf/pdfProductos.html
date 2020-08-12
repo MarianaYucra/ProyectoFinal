@@ -43,9 +43,8 @@
             </div>
         <div>
         <div class='details'>
-            Bill to: <br/>
-            Amount:  <br/>
-            Date: 
+            Tienda: <br/> Don toñito
+            RUC:  <br/> 4895165
             <hr class='hrItem' />
         </div>
     </div>
@@ -53,27 +52,46 @@
                     <table class="table">
                       <thead class=" text-primary">
                         <th>
-                          ID
+                          CÓDIGO
+                        </th>
+                        <th>
+                          CATEGORÍA
                         </th>
                         <th>
                           NOMBRE
                         </th>
-                        <th>
+			<th>
+                          COSTO
+                        </th>
+			<th>
+                          OFFER
+                        </th>
+			<th>
                           ESTADO
                         </th>
+
                       </thead>
                       {% for obj in obj %}
                       <tbody>
                         <tr>
                           <td>
-                            {{obj.id}}
+                            {{obj.codigo}}
+                          </td>
+                          <td>
+                            {{obj.categoria}}
                           </td>
                           <td>
                             {{obj.nombre}}
+                          </td>            
+			  <td>
+                            {{obj.costo}}
                           </td>
-                          <td>
+			  <td>
+                            {{obj.offer}}
+                          </td>
+			  <td>
                             {{obj.activado}}
-                          </td>              
+                          </td>
                         </tr>
                       </tbody>
                       {% endfor %}
